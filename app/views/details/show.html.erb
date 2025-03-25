@@ -1,0 +1,52 @@
+<div id="<%= dom_id @detail %>" class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 border border-gray-200 mt-10">
+  <h2 class="text-2xl font-bold text-gray-700 mb-4">Details</h2>
+  <hr/>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+    <p><strong class="text-gray-600">Faculty Name:</strong> <span class="text-gray-800"><%= @detail.faculty_name %></span></p>
+    <p><strong class="text-gray-600">Semester:</strong> <span class="text-gray-800"><%= @detail.semester %></span></p>
+    <p><strong class="text-gray-600">Section:</strong> <span class="text-gray-800"><%= @detail.section %></span></p>
+    <p><strong class="text-gray-600">Academic Year:</strong> <span class="text-gray-800"><%= @detail.academic_year %></span></p>
+    <p><strong class="text-gray-600">Subject Code:</strong> <span class="text-gray-800"><%= @detail.subject_code %></span></p>
+    
+    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">CO Attainment with C.I.E</h3>
+    <p><strong class="text-gray-600">CO1:</strong> <span class="text-gray-800"><%= @detail.co1 %></span></p>
+    <p><strong class="text-gray-600">CO2:</strong> <span class="text-gray-800"><%= @detail.co2 %></span></p>
+    <p><strong class="text-gray-600">CO3:</strong> <span class="text-gray-800"><%= @detail.co3 %></span></p>
+    <p><strong class="text-gray-600">CO4:</strong> <span class="text-gray-800"><%= @detail.co4 %></span></p>
+    <p><strong class="text-gray-600">CO5:</strong> <span class="text-gray-800"><%= @detail.co5 %></span></p>
+    
+    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">CO Attainment with S.E.E</h3>
+    <p><strong class="text-gray-600">CO1 - CO5:</strong> <span class="text-gray-800"><%= @detail.see_co1_co5 %></span></p>
+    
+    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">Program Outcomes</h3>
+    <p><strong class="text-gray-600">PO1:</strong> <span class="text-gray-800"><%= @detail.po1 %></span></p>
+    <p><strong class="text-gray-600">PO2:</strong> <span class="text-gray-800"><%= @detail.po2 %></span></p>
+    <p><strong class="text-gray-600">PO3:</strong> <span class="text-gray-800"><%= @detail.po3 %></span></p>
+    <p><strong class="text-gray-600">PO4:</strong> <span class="text-gray-800"><%= @detail.po4 %></span></p>
+    <p><strong class="text-gray-600">PO5:</strong> <span class="text-gray-800"><%= @detail.po5 %></span></p>
+    <p><strong class="text-gray-600">PO6:</strong> <span class="text-gray-800"><%= @detail.po6 %></span></p>
+    <p><strong class="text-gray-600">PO7:</strong> <span class="text-gray-800"><%= @detail.po7 %></span></p>
+    <p><strong class="text-gray-600">PO8:</strong> <span class="text-gray-800"><%= @detail.po8 %></span></p>
+    <p><strong class="text-gray-600">PO9:</strong> <span class="text-gray-800"><%= @detail.po9 %></span></p>
+    <p><strong class="text-gray-600">PO10:</strong> <span class="text-gray-800"><%= @detail.po10 %></span></p>
+    <p><strong class="text-gray-600">PO11:</strong> <span class="text-gray-800"><%= @detail.po11 %></span></p>
+    <p><strong class="text-gray-600">PO12:</strong> <span class="text-gray-800"><%= @detail.po12 %></span></p>
+    
+    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">Program Specific Outcomes</h3>
+    <p><strong class="text-gray-600">PSO1:</strong> <span class="text-gray-800"><%= @detail.pso1 %></span></p>
+    <p><strong class="text-gray-600">PSO2:</strong> <span class="text-gray-800"><%= @detail.pso2 %></span></p>
+    <p><strong class="text-gray-600">PSO3:</strong> <span class="text-gray-800"><%= @detail.pso3 %></span></p>
+
+    <% if @detail.approve == false %>
+      <%= button_to "Approve", approve_path(id: @detail.id), 
+        method: :post, data: {confirm: "Are you sure you want to approve?"}, 
+        class: "text-blue-500 hover:underline px-4 py-2 bg-green-500 text-white rounded" %>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="mb-6 grid place-items-center">
+  <%= link_to "back", reviewers_index_path, class:"mt-7 text-white bg-red-400 p-2"%>
+</div>
