@@ -8,18 +8,27 @@
     <p><strong class="text-gray-600">Section:</strong> <span class="text-gray-800"><%= @detail.section %></span></p>
     <p><strong class="text-gray-600">Academic Year:</strong> <span class="text-gray-800"><%= @detail.academic_year %></span></p>
     <p><strong class="text-gray-600">Subject Code:</strong> <span class="text-gray-800"><%= @detail.subject_code %></span></p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+      <p><strong class="text-gray-600">Target:</strong> <span class="text-gray-800"><%= @detail.target %> %</span></p>
+      <p><strong class="text-gray-600">Threshold:</strong> <span class="text-gray-800"><%= @detail.threshold %> %</span></p>
+    </div>
+
+
     
-    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">CO Attainment with C.I.E</h3>
+    <h3 class="col-span-2 text-xl font-extrabold text-gray-700 mt-4">CO Attainment with C.I.E</h3>
     <p><strong class="text-gray-600">CO1:</strong> <span class="text-gray-800"><%= @detail.co1 %></span></p>
     <p><strong class="text-gray-600">CO2:</strong> <span class="text-gray-800"><%= @detail.co2 %></span></p>
     <p><strong class="text-gray-600">CO3:</strong> <span class="text-gray-800"><%= @detail.co3 %></span></p>
     <p><strong class="text-gray-600">CO4:</strong> <span class="text-gray-800"><%= @detail.co4 %></span></p>
     <p><strong class="text-gray-600">CO5:</strong> <span class="text-gray-800"><%= @detail.co5 %></span></p>
     
-    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">CO Attainment with S.E.E</h3>
+
+    <h3 class="col-span-2 text-xl font-extrabold text-gray-700 mt-4">CO Attainment with S.E.E</h3>
     <p><strong class="text-gray-600">CO1 - CO5:</strong> <span class="text-gray-800"><%= @detail.see_co1_co5 %></span></p>
+
+
     
-    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">Program Outcomes</h3>
+    <h3 class="col-span-2 text-xl font-extrabold text-gray-700 mt-4">Program Outcomes</h3>
     <p><strong class="text-gray-600">PO1:</strong> <span class="text-gray-800"><%= @detail.po1 %></span></p>
     <p><strong class="text-gray-600">PO2:</strong> <span class="text-gray-800"><%= @detail.po2 %></span></p>
     <p><strong class="text-gray-600">PO3:</strong> <span class="text-gray-800"><%= @detail.po3 %></span></p>
@@ -32,26 +41,33 @@
     <p><strong class="text-gray-600">PO10:</strong> <span class="text-gray-800"><%= @detail.po10 %></span></p>
     <p><strong class="text-gray-600">PO11:</strong> <span class="text-gray-800"><%= @detail.po11 %></span></p>
     <p><strong class="text-gray-600">PO12:</strong> <span class="text-gray-800"><%= @detail.po12 %></span></p>
+
+
     
-    <h3 class="col-span-2 text-xl font-semibold text-gray-700 mt-4">Program Specific Outcomes</h3>
+    <h3 class="col-span-2 text-xl font-extrabold text-gray-700 mt-4">Program Specific Outcomes</h3>
     <p><strong class="text-gray-600">PSO1:</strong> <span class="text-gray-800"><%= @detail.pso1 %></span></p>
     <p><strong class="text-gray-600">PSO2:</strong> <span class="text-gray-800"><%= @detail.pso2 %></span></p>
     <p><strong class="text-gray-600">PSO3:</strong> <span class="text-gray-800"><%= @detail.pso3 %></span></p>
+
 
     <% if @detail.approve == false %>
       <%= button_to "Approve", approve_path(id: @detail.id), 
         method: :post, data: {confirm: "Are you sure you want to approve?"}, 
         class: "text-blue-500 hover:underline px-4 py-2 bg-green-500 text-white rounded" %>
+    <% else %>
+      <h1 class="bg-emerald-600 p-2 text-white text-center">Approved!</h1>
     <% end %>
 
-    <% if @detail.excel_file.present? %>
-      <%= link_to "Download Excel File", rails_blob_path(@detail.excel_file, disposition: "attachment"), class: "text-center bg-emerald-800 p-2 text-white hover:bg-emerald-600" %>
-    <% else %>
-      <span class="text-red-600">No File Uploaded By the Person!</span>
-    <% end %>
 
 
   </div>
+    <% if @detail.excel_file.present? %>
+      <div class="flex items-center justify-end my-3">
+        <%= link_to "Download Excel File", rails_blob_path(@detail.excel_file, disposition: "attachment"), class: "rounded-md text-center bg-sky-800 p-2 text-white hover:bg-sky-600" %>
+      </div>
+    <% else %>
+      <span class="text-red-600">No File Uploaded By the Person!</span>
+    <% end %>
 </div>
 
 <div class="mb-6 grid place-items-center">

@@ -65,6 +65,6 @@ class DetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def detail_params
-      params.expect(detail: [ :faculty_name, :semester, :section, :academic_year, :subject_code, :co1, :co2, :co3, :co4, :co5, :see_co1_co5, :po1, :po2, :po3, :po4, :po5, :po6, :po7, :po8, :po9, :po10, :po11, :po12, :pso1, :pso2, :pso3, :approve, :excel_file])
+      params.expect(detail: [ :faculty_name, :semester, :section, :academic_year, :subject_code, :co1, :co2, :co3, :co4, :co5, :see_co1_co5, :po1, :po2, :po3, :po4, :po5, :po6, :po7, :po8, :po9, :po10, :po11, :po12, :pso1, :pso2, :pso3, :approve, :target, :threshold, :excel_file])
     end
 end
