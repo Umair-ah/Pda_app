@@ -26,14 +26,14 @@
 
   <body class="bg-gray-100 min-h-screen flex flex-col">
     <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-700">Dashboard</h1>
+      <h1 class="text-2xl font-bold text-gray-700">NBA Criteria 3</h1>
       
       <% if current_user %>
         <div class="flex items-center space-x-4">
           <% if current_user.type == "Admin" %>
-            <%= link_to "Admin Dashboard", admins_index_path, class: "bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-600 transition" %>
+            <%= link_to "Admin Dashboard", admins_index_path, class: "bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition" %>
           <% elsif current_user.type == "Reviewer" %>
-            <%= link_to "Reviewer Dashboard", reviewers_index_path, class: "bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-600 transition" %>
+            <%= link_to "Reviewer Dashboard", reviewers_index_path, class: "bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition" %>
           <% end %>
           
           <%= button_to "Log Out", destroy_user_session_path, method: :delete, 
@@ -49,8 +49,9 @@
       <%= yield %>
     </main>
 
-    <footer class="bg-gray-900 text-white text-center py-4">
-      Poojya Dodappa Appa, College Of Engineering.
+    <footer class="bg-gray-900 text-white text-center py-4 flex items-center justify-evenly">
+      <span>Poojya Dodappa Appa, College Of Engineering.</span>
+      <span>Developed By Shaikh Umair Ahmed, 3PD21CS087</span>
     </footer>
   </body>
 

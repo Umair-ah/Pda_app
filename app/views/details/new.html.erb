@@ -1,5 +1,14 @@
 
-<h1 class="my-5 text-3xl font-bold text-center">Details</h1>
+<div class="max-w-4xl mx-auto bg-gradient-to-r from-indigo-400 to-indigo-600 text-white py-10 shadow-lg">
+    <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl font-extrabold tracking-wide uppercase my-2">PDA College of Engineering</h1>
+        <p class="text-lg font-medium mt-2 opacity-80">Computer Science & Engineering Department</p>
+        <div class="mt-4 border-t border-white/50 w-1/3 mx-auto"></div>
+        <h2 class="text-2xl font-semibold mt-4 tracking-wide">CO, PO, PSO Attainment Submission</h2>
+    </div>
+</div>
+
+
 <% if current_user %>
   <h1 class="text-red-500 font-bold text-center text-3xl">Log Out To Fill The Form</h1>
 <% else %>
@@ -18,7 +27,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
         <%= form.label :faculty_name, class: "block font-medium text-gray-700" %>
-        <%= form.text_field :faculty_name, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true %>
+        <%= form.text_field :faculty_name, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true %>
       </div>
       <div>
         <%= form.label :semester, class: "block font-medium text-gray-700" %>
@@ -34,7 +43,7 @@
               ["Semester VIII", "Semester VIII"]
             ], 
             {}, 
-            class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true
+            class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true
         %>
       </div>
       <div>
@@ -43,19 +52,19 @@
             [
               ["A", "A"], 
               ["B", "B"], 
-              ["CSD", "CSD"], 
+              ["C", "C"], 
             ], 
             {}, 
-            class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true
+            class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true
         %>
       </div>
       <div>
         <%= form.label :academic_year, class: "block font-medium text-gray-700" %>
-        <%= form.text_field :academic_year, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true %>
+        <%= form.text_field :academic_year, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true %>
       </div>
       <div>
         <%= form.label :subject_code, class: "block font-medium text-gray-700" %>
-        <%= form.text_field :subject_code, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true %>
+        <%= form.text_field :subject_code, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true %>
       </div>
     </div>
 
@@ -64,7 +73,7 @@
       <% [:co1, :co2, :co3, :co4, :co5].each do |co| %>
         <div>
           <%= form.label co, class: "block text-gray-700" %>
-          <%= form.number_field co, step: 0.1, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true %>
+          <%= form.number_field co, step: 0.0001, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true %>
         </div>
       <% end %>
     </div>
@@ -72,7 +81,7 @@
     <h3 class="mt-6 text-lg font-semibold text-gray-800">Co Attainment with S.E.E</h3>
     <div class="mt-2">
       <%= form.label :see_co1_co5, "Co1 - Co5", class: "block text-gray-700" %>
-      <%= form.number_field :see_co1_co5, step: 0.1, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true %>
+      <%= form.number_field :see_co1_co5, step: 0.0001, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true %>
     </div>
 
     <h3 class="mt-6 text-lg font-semibold text-gray-800">PO Attainment</h3>
@@ -80,7 +89,7 @@
       <% (1..12).each do |po| %>
         <div>
           <%= form.label "po#{po}", "PO#{po}", class: "block text-gray-700" %>
-          <%= form.number_field "po#{po}", step: 0.1, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true %>
+          <%= form.number_field "po#{po}", step: 0.0001, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true %>
         </div>
       <% end %>
     </div>
@@ -91,7 +100,7 @@
       <% (1..3).each do |pso| %>
         <div>
           <%= form.label "pso#{pso}", "PSO#{pso}", class: "block text-gray-700" %>
-          <%= form.number_field "pso#{pso}", step: 0.1, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300", required: true %>
+          <%= form.number_field "pso#{pso}", step: 0.0001, min: 0, class: "w-full px-4 py-2 border rounded-lg focus:ring focus:ring-indigo-300", required: true %>
         </div>
       <% end %>
     </div>
@@ -103,7 +112,7 @@
     
 
     <div class="mt-6 flex justify-end">
-      <%= form.submit "Submit", class: "px-6 py-2 bg-blue-600 text-white font-semibold hover:cursor-pointer rounded-lg shadow-md hover:bg-blue-700 focus:ring focus:ring-blue-300" %>
+      <%= form.submit "Submit", class: "px-6 py-2 bg-indigo-600 text-white font-semibold hover:cursor-pointer rounded-lg shadow-md hover:bg-indigo-700 focus:ring focus:ring-indigo-300" %>
     </div>
   <% end %>
 <% end %>
