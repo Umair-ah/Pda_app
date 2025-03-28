@@ -95,10 +95,15 @@
         </div>
       <% end %>
     </div>
+
+    <div class="my-3">
+      <%= form.label :excel_file, "Upload Excel File", class: "block text-gray-700" %>
+      <%= form.file_field :excel_file, direct_upload: true, class:"bg-gray-700 p-2 text-white hover:cursor-pointer hover:bg-gray-600" %>
+    </div>
     
 
     <div class="mt-6 flex justify-end">
-      <%= form.submit "Submit", class: "px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:ring focus:ring-blue-300" %>
+      <%= form.submit "Submit", class: "px-6 py-2 bg-blue-600 text-white font-semibold hover:cursor-pointer rounded-lg shadow-md hover:bg-blue-700 focus:ring focus:ring-blue-300" %>
     </div>
   <% end %>
 <% end %>

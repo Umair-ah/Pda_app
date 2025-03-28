@@ -44,6 +44,13 @@
         class: "text-blue-500 hover:underline px-4 py-2 bg-green-500 text-white rounded" %>
     <% end %>
 
+    <% if @detail.excel_file.present? %>
+      <%= link_to "Download Excel File", rails_blob_path(@detail.excel_file, disposition: "attachment"), class: "text-center bg-emerald-800 p-2 text-white hover:bg-emerald-600" %>
+    <% else %>
+      <span class="text-red-600">No File Uploaded By the Person!</span>
+    <% end %>
+
+
   </div>
 </div>
 
