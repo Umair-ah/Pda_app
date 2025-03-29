@@ -1,5 +1,9 @@
 <% if @details.present? %>
   <div class="overflow-x-auto mt-6">
+    <div class="flex items-center justify-end">
+      <%= button_to "Export All", export_all_path, method: :post, class: "bg-emerald-500 p-2 text-white hover:underline" %>
+    </div>
+
     <table class="min-w-full bg-white border border-gray-300 shadow-md rounded-lg">
       <thead>
         <tr class="bg-gray-200 text-gray-700">

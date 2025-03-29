@@ -63,7 +63,7 @@
   </div>
     <% if @detail.excel_file.present? %>
       <div class="flex items-center justify-end my-3">
-        <%= link_to "Download Excel File", rails_blob_url(@detail.excel_file.blob, disposition: "attachment"), target: "_blank", class: "rounded-md text-center bg-sky-800 p-2 text-white hover:bg-sky-600" %>
+        <%= link_to "Download Excel File", rails_blob_path(@detail.excel_file.blob, disposition: "attachment"), class: "rounded-md text-center bg-sky-800 p-2 text-white hover:bg-sky-600" %>
       </div>
     <% else %>
       <span class="text-red-600">No File Uploaded By the Person!</span>
