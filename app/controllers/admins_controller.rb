@@ -2,7 +2,11 @@ require 'caxlsx'
 class AdminsController < ApplicationController
 
   def index
-    @details = Detail.where(approve: true).lazy
+    if current_user.type == "Admin"
+      @details = Detail.where(approve: true).order(created_at: :desc).lazy
+    else
+      redirect_to root_path
+    end
   end
 
   def export

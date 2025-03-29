@@ -2,7 +2,7 @@ class ReviewersController < ApplicationController
 
   def index
     if current_user.type == "Reviewer"
-      @details = Detail.where(semester: current_user.sem).order(created_at: :desc)
+      @details = Detail.where(semester: current_user.sem).order(created_at: :desc).lazy
     else
       redirect_to root_path
     end
