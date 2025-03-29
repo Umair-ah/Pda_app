@@ -68,4 +68,4 @@ gem "devise"
 
 gem 'caxlsx'
 
-
+gem "aws-sdk-s3", require: false
