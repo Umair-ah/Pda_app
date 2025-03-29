@@ -2,7 +2,7 @@ require 'caxlsx'
 class AdminsController < ApplicationController
 
   def index
-    @details = Detail.where(approve: true)
+    @details = Detail.where(approve: true).lazy
   end
 
   def export
