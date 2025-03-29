@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get "/admins/index", to: "admins#index"
   post "/admins/export", to: "admins#export", as: :export
+  post "/admins/export_all", to: "admins#export_all", as: :export_all
+
 
 
   
